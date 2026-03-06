@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embryo-AI | Future-Proofing Your Workforce</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary:#00d2ff;
+    --secondary:#3a7bd5;
+    --accent:#ff6ec7;
+    --glass:rgba(255,255,255,0.05);
+    --bg:#030a16;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth;}
+body{background-color:var(--bg);color:white;overflow-x:hidden;}
+#bg-canvas{position:fixed;top:0;left:0;z-index:-1;width:100%;height:100%;opacity:0.3;}
+.navbar{position:sticky;top:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);padding:15px 20px;display:flex;justify-content:center;gap:30px;z-index:1000;}
+.navbar a{color:white;text-decoration:none;font-weight:bold;transition:0.3s;}
+.navbar a:hover{color:var(--primary);}
+header{text-align:center;padding:120px 20px 80px;position:relative;}
+h1{font-size:3rem;font-weight:900;line-height:1.2;background:linear-gradient(90deg,#fff,var(--primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
+.hero-sub{color:#d1d1d1;max-width:700px;margin:0 auto 30px;font-size:1.2rem;}
+.btn{background:linear-gradient(45deg,var(--secondary),var(--primary));color:white;padding:18px 35px;border:none;border-radius:50px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;transition:0.3s;text-align:center;}
+.btn:hover{box-shadow:0 0 30px var(--primary);transform:scale(1.05);}
+.video-wrapper{max-width:800px;margin:40px auto;border-radius:20px;border:2px solid var(--primary);overflow:hidden;box-shadow:0 0 50px rgba(0,210,255,0.4);animation: float 4s ease-in-out infinite;}
+video{width:100%;border-radius:20px;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.container{max-width:1000px;margin:0 auto;padding:50px 20px;display:flex;flex-direction:column;gap:40px;}
+.glass-card{background:var(--glass);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:40px;box-shadow:0 0 25px rgba(0,210,255,0.1);transition:0.3s;}
+.glass-card:hover{border-color:var(--primary);box-shadow:0 0 35px rgba(0,210,255,0.3);}
+h2{font-size:2rem;color:var(--primary);margin-bottom:20px;text-transform:uppercase;}
+p{color:#d1d1d1;line-height:1.8;}
+.form-field{display:flex;flex-direction:column;gap:15px;}
+input,textarea{background:rgba(0,0,0,0.4);border:1px solid rgba(0,210,255,0.3);padding:15px;border-radius:10px;color:white;outline:none;transition:0.3s;}
+input:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 10px var(--primary);}
+#thankyouSection{display:none;padding:50px;text-align:center;}
+@media(max-width:768px){h1{font-size:2rem;}.glass-card{padding:25px;}}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="navbar">
+  <a href="#contact">Request Consultation</a>
+  <a href="#calendar">Book Call</a>
+</div>
+
+<header>
+<h1 id="animatedHeadline"></h1>
+<p class="hero-sub" id="animatedSub"></p>
+<a href="#contact" class="btn">Get Started</a>
+
+<div class="video-wrapper">
+<video id="promoVideo" loop muted>
+<source src="Ad.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<div style="margin-top:15px;text-align:center;">
+<button class="btn" id="playPauseBtn">Play</button>
+<button class="btn" id="muteUnmuteBtn">Mute</button>
+</div>
+</div>
+</header>
+
+<div class="container">
+
+<div class="glass-card">
+<h2>Are You Settling for "Available" Instead of "Best"?</h2>
+<p>Most recruitment agencies only focus on 30% active candidates. We reach the top 70% high-performers already excelling in their roles.</p>
+</div>
+
+<div class="glass-card">
+<h2>The Embryo-AI Advantage</h2>
+<p>Advanced AI mapping identifies professionals whose skills perfectly match your requirements, bringing passive talent directly to your doorstep.</p>
+</div>
+
+<div class="glass-card">
+<h2>Trusted by Growing Companies</h2>
+<p>✔️ 500+ candidates placed<br>✔️ 70% faster hiring<br>✔️ Startups & enterprise teams trust us</p>
+</div>
+
+<div class="glass-card">
+<h2>Why Choose Embryo-AI?</h2>
+<p>✔️ AI-Powered Matching<br>✔️ Access Hidden Talent<br>✔️ 70% Faster Hiring<br>✔️ Elite Candidates</p>
+</div>
+
+<!-- Lead Form -->
+<div class="glass-card" id="contact">
+<h2>Request a Consultation</h2>
+<form id="leadForm" class="form-field">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Work Email" required>
+<input type="tel" name="phone" placeholder="Phone Number">
+<input type="text" name="company" placeholder="Company Name">
+<input type="text" name="position" placeholder="Role You're Hiring For">
+<textarea name="needs" rows="4" placeholder="Briefly describe your hiring needs"></textarea>
+<button type="submit" class="btn">Send & Book Call</button>
+</form>
+</div>
+
+<div id="thankyouSection">
+<h2>Thank You!</h2>
+<p>Your request has been received. Redirecting to booking...</p>
+</div>
+
+<!-- Calendly Embed -->
+<section id="calendar" style="padding:50px 0;text-align:center;">
+<div class="glass-card">
+<h2>Book Your Consultation Call</h2>
+<div class="calendly-inline-widget" data-url="https://calendly.com/inshaseo725/30min" style="min-width:320px;height:700px;margin:0 auto;"></div>
+</div>
+</section>
+
+</div>
+
+<footer style="text-align:center;padding:50px;color:#555;">Embryo-AI &copy; 2026. Future-proofing your workforce.</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+// Hero typing animation
+const headlineText = "Hire Elite Talent 70% Faster With AI Recruitment";
+const subText = "We don’t just find candidates who are looking for jobs—we identify top-tier professionals already excelling in their roles.";
+let hIndex=0,sIndex=0;
+const hElem=document.getElementById("animatedHeadline");
+const sElem=document.getElementById("animatedSub");
+function typeHero(){ if(hIndex<headlineText.length){hElem.innerHTML+=headlineText[hIndex];hIndex++;setTimeout(typeHero,50);} else{typeSub();} }
+function typeSub(){ if(sIndex<subText.length){sElem.innerHTML+=subText[sIndex];sIndex++;setTimeout(typeSub,30);}}
+typeHero();
+
+// Video controls
+const video=document.getElementById('promoVideo');
+document.getElementById('playPauseBtn').addEventListener('click',()=>{video.paused?video.play():video.pause();});
+document.getElementById('muteUnmuteBtn').addEventListener('click',()=>{video.muted=!video.muted;});
+
+// Background particles
+const canvas=document.getElementById('bg-canvas');const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+let particles=[];for(let i=0;i<80;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,s:Math.random()*1.5});}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle="#00d2ff";particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill();p.y-=0.3;if(p.y<0)p.y=canvas.height;});requestAnimationFrame(draw);}
+draw();
+
+// Form submit -> redirect to Calendly
+document.getElementById('leadForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    // show thank you
+    document.getElementById('leadForm').style.display='none';
+    document.getElementById('thankyouSection').style.display='block';
+    // Redirect to Calendly after 2s
+    setTimeout(()=>{ window.location.href="#calendar"; },2000);
+});
+</script>
+
+</body>
+</html>
