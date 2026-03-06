@@ -1,2 +1,34 @@
-# Embryo.Ai
-Embryo-AI is a cutting-edge AI-powered recruitment platform designed to help companies hire elite talent 70% faster. Our smart AI identifies top-performing professionals who aren’t actively looking for a job, giving your company exclusive access to hidden talent.
+# Embryo-AI Landing Page (Pro SaaS Version)
+
+This is a **modern, pro SaaS-style AI recruitment landing page** designed to capture leads and schedule consultations.
+
+## Features
+
+- Animated hero headline & subheadline (typing effect)
+- Glassmorphism feature cards
+- Responsive design for mobile, tablet & desktop
+- Video promo section with play/pause/mute
+- Lead capture form → redirects to Calendly booking
+- Inline thank-you message
+- Calendly consultation booking embedded
+- Particle animated background
+- Sticky navbar + smooth scrolling
+
+## Funnel Structure
+
+Ad → Landing Page → Lead Form → Redirect to Calendly Booking → Consultation Scheduled
+
+## Technologies Used
+
+- HTML5, CSS3, JavaScript
+- Formspree for lead capture
+- Calendly for booking
+- GitHub Pages / Vercel for deployment
+
+## Live Website
+
+[https://your-github-username.github.io/Embryo-AI/](https://your-github-username.github.io/Embryo-AI/)
+
+## Author
+
+Insha SEO
